@@ -5,7 +5,6 @@ const authRouter = require("./routes/auth");
 const adminRouter = require("./routes/admin");
 const productRouter = require("./routes/product");
 const userRouter = require("./routes/user");
-const PORT = 3000;
 require("dotenv").config();
 
 const DB = process.env.DB;
@@ -31,6 +30,6 @@ mongoose
     console.log(e);
   });
 
-app.listen("0.0.0.0", () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log(`connected at port ${PORT}`);
 });
